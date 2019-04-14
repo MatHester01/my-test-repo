@@ -13,10 +13,10 @@ pipeline {
                     if (CHOICES == 'one') {
                     MY_CREDS = credentials('MY_CREDS')
                         echo "Password is ${MY_CREDS_PSW}"
-                        echo "Username is ${MY_CREDS_USR}"
-                        
+                        echo "Username is ${MY_CREDS_USR}"  
                     }
                 }
+                sh 'echo "Hello World"'
             }
         }
     }
