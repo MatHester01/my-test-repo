@@ -1,1 +1,1 @@
-def MY_CREDS = credentials('MY_CREDS')
+env.MY_CREDS = credentials('MY_CREDS')
