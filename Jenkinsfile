@@ -11,12 +11,12 @@ pipeline {
             steps {
                 script {
                     if (CHOICES == 'one') {
-                    MY_CREDS = credentials('MY_CREDS')
-                        echo "Password is ${MY_CREDS_PSW}"
-                        echo "Username is ${MY_CREDS_USR}"  
+                    env.MY_CREDS = credentials('MY_CREDS')
+                        echo "Password is ${env.MY_CREDS_PSW}"
+                        echo "Username is ${env.MY_CREDS_USR}"  
                     }
                 }
-                sh 'echo "Hello World"'
+                bat 'echo "Hello World"'
             }
         }
     }
