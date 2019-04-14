@@ -4,7 +4,7 @@ pipeline {
   choice choices: ['one', 'two ', 'three'], description: '', name: 'CHOICES'
 }
     environment {
-    def MY_CREDS;
+    def MY_CREDS = '';
     }
     stages {
         stage('Example stage 1') {
