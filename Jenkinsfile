@@ -3,14 +3,18 @@ pipeline {
     parameters {
   choice choices: ['one', 'two ', 'three'], description: '', name: 'CHOICES'
 }
+    environment 
+    def MY_CREDS;
+    }
     stages {
         stage('Example stage 1') {
             steps {
                 script {
                     if (CHOICES == 'one') {
-                    creds = load(environment.groovy)
-                    cred.MY_CREDS()
-                echo "${MY_CREDS_USR}" 
+                    MY_CREDS = credentials('MY_CREDS')
+                        echo "Password is ${MY_CREDS_PSW}"
+                        echo "Username is ${MY_CREDS_USR}"
+                        
                     }
                 }
             }
