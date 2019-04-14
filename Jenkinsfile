@@ -8,7 +8,8 @@ pipeline {
             steps {
                 script {
                     if (CHOICES == 'one') {
-                        load(environment.groovy)
+                    creds = load(environment.groovy)
+                    cred.MY_CREDS()
                 echo "${MY_CREDS_USR}" 
                     }
                 }
